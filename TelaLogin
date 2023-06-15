@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
@@ -23,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.JPasswordField;
@@ -37,6 +39,9 @@ import javax.swing.border.BevelBorder;
 
 public class TelaLogin extends JFrame {
 
+	
+	
+	
 	private JPanel contentPane;
 	private JTextField loginField;
 	private JPasswordField passwordField;
@@ -237,6 +242,8 @@ public class TelaLogin extends JFrame {
 		lblNewLabel.setFont(new Font("Dubai", Font.BOLD, 30));
 		lblNewLabel.setBounds(116, 94, 98, 44);
 		panel.add(lblNewLabel);
+		setLocationRelativeTo(null);
+		
 		
 		}
 }
