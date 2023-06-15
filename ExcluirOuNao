@@ -1,0 +1,104 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+
+public class ExcluirOuNao extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			ExcluirOuNao dialog = new ExcluirOuNao();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public ExcluirOuNao() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		setLocationRelativeTo(null);
+
+		
+		JLabel lblNewLabel = new JLabel("   Tem certeza que deseja excluir este ítem permanentemente ");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setFont(new Font("Dubai", Font.BOLD, 15));
+		lblNewLabel.setBounds(10, 62, 392, 26);
+		contentPanel.add(lblNewLabel);
+		{
+			JButton simButton = new JButton("Sim");
+			simButton.setFont(new Font("Dubai", Font.PLAIN, 15));
+			simButton.setBounds(88, 176, 80, 35);
+			contentPanel.add(simButton);
+			simButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					
+				}
+			});
+			simButton.setActionCommand("OK");
+			getRootPane().setDefaultButton(simButton);
+		}
+		{
+			JButton cancelButton = new JButton("Não");
+			cancelButton.setFont(new Font("Dubai", Font.PLAIN, 15));
+			cancelButton.setBounds(268, 176, 80, 35);
+			contentPanel.add(cancelButton);
+			cancelButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+				}
+			});
+			cancelButton.setActionCommand("Cancel");
+		}
+		{
+			JLabel lblDoSeuEstoque = new JLabel("   do seu estoque?");
+			lblDoSeuEstoque.setHorizontalAlignment(SwingConstants.LEFT);
+			lblDoSeuEstoque.setFont(new Font("Dubai", Font.BOLD, 15));
+			lblDoSeuEstoque.setBounds(11, 85, 425, 26);
+			contentPanel.add(lblDoSeuEstoque);
+		}
+		{
+			JLabel lblOtemSer = new JLabel("   O ítem será apagado. Você não poderá desfazer esta ação.");
+			lblOtemSer.setHorizontalAlignment(SwingConstants.LEFT);
+			lblOtemSer.setFont(new Font("Dubai", Font.PLAIN, 13));
+			lblOtemSer.setBounds(10, 110, 392, 26);
+			contentPanel.add(lblOtemSer);
+		}
+		{
+			JPanel panel = new JPanel();
+			panel.setBackground(new Color(38, 147, 166));
+			panel.setBounds(0, 0, 436, 36);
+			contentPanel.add(panel);
+		}
+		{
+			JPanel panel = new JPanel();
+			panel.setBackground(new Color(38, 147, 166));
+			panel.setBounds(0, 227, 436, 36);
+			contentPanel.add(panel);
+		}
+	}
+}
